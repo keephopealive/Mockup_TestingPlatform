@@ -12,26 +12,25 @@ DRAGGABLE ANSWERS
 	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 	<script type="text/javascript">
 		  $(function() {
-		    $( "#sortable" ).sortable();
-		    $( "#sortable" ).disableSelection();
+              $( "#sortable, #sortable2" ).sortable();
+		      $( "#sortable, #sortable2" ).disableSelection();
+		 
+              
+              $(document).on('click','#add-answer-btn', function(){
+                $(this).closest('.answers').find('.answerbank').append("<li class='ui-state-default'><div class='boxed-answer'><label class='answer'><span class='glyphicon glyphicon-sort'></span></label><input type='text' class='answer' value='test'> <button class='btn btn-danger btn-xs added-answer'>X</button></div></li>");
+              });
+              $(document).on('click', '.added-answer', function(){
+                $(this).parent().remove();
+              });
+              $(document).on('dblclick', 'li.answer', function(){
+                $(this).parent().toggleClass('right-answer');
+                // $(this).parent().prop('correct', true);
+              });
+              $(document).on('click', '#add-question', function(){
+                $('.container').append("");
+              });
 		  });
-        $(function() {
-		    $( "#sortable2" ).sortable();
-		    $( "#sortable2" ).disableSelection();
-		  });
-		  $(document).on('click','#add-answer-btn', function(){
-		  	$(this).closest('.answers').find('.answerbank').append("<li class='ui-state-default'><div class='boxed-answer'><label class='answer'><span class='glyphicon glyphicon-sort'></span></label><input type='text' class='answer' value='test'> <button class='btn btn-danger btn-xs added-answer'>X</button></div></li>");
-		  });
-		  $(document).on('click', '.added-answer', function(){
-		  	$(this).parent().remove();
-		  });
-		  $(document).on('dblclick', 'li.answer', function(){
-		  	$(this).parent().toggleClass('right-answer');
-		  	// $(this).parent().prop('correct', true);
-		  });
-		  $(document).on('click', '#add-question', function(){
-		  	$('.container').append("");
-		  });
+		  
 	</script>
 	<title>Admin Create/Edit Test</title>
 </head>
@@ -52,10 +51,9 @@ DRAGGABLE ANSWERS
                     </div>
                     <div class="col-xs-6">
                         <nav class="navigation">
-                            <a href="#" class="btn btn-default">Home</a>
-                            <a href="#" class="btn btn-default">Results</a>
-                            <a href="#" class="btn btn-default">Trends</a>
-                            <a href="#" class="btn btn-default">Logout</a>
+                            <a href="/Users/kratos/Desktop/TestingPlatform/admin-test-index.html" class="btn btn-default">Home</a>
+                            <a href="/Users/kratos/Desktop/TestingPlatform/admin-results.html" class="btn btn-default">Results</a>
+                            <a href="/Users/kratos/Desktop/TestingPlatform/landingpage.html" class="btn btn-default">Logout</a>
                         </nav>		
                     </div>
                 </div>
@@ -106,44 +104,41 @@ DRAGGABLE ANSWERS
 			        </div>
 		        </div>	
 		        <div class="row"> <!-- ANSWERS AND OPTIONS ROW -->
-                    <div class="col-xs-6"> <!-- ANSWERS COLUMN -->
-                        <div class="answers"> 
-                            <h4>Doublec click on an answer to toggle correct/incorrect.</h4>
-                            <ul id="sortable" class="answerbank">
-                                <li class="ui-state-default li-answer">
-                                    <div class='boxed-answer'>
-                                        <label class="answer">
-                                            <span class="glyphicon glyphicon-sort"></span>
-                                        </label>
-                                        <input type='text' class="answer" value='test' id="first-answer">
-                                    </div>	
-                                </li>
-                            </ul>
-                            <button id="add-answer-btn" class="boxed-answer add-answer">Add an answer</button>
-                        </div> 
+                    <div class="col-xs-6 answers"> <!-- ANSWERS COLUMN -->
+                       
+                        <h4>Doublec click on an answer to toggle correct/incorrect.</h4>
+                        <ul id="sortable" class="answerbank">
+                            <li class="ui-state-default li-answer">
+                                <div class='boxed-answer'>
+                                    <label class="answer">
+                                        <span class="glyphicon glyphicon-sort"></span>
+                                    </label>
+                                    <input type='text' class="answer" value='test' id="first-answer">
+                                </div>	
+                            </li>
+                        </ul>
+                        <button id="add-answer-btn" class="boxed-answer add-answer">Add an answer</button>
+                        
                     </div> <!-- END ANSWERS COLUMN -->
                     <div class="col-xs-6"> <!-- OPTIONS COLUMN -->
-                        <div class="row">
-                            <div class="options">
-                                <div class="row padding15">
-                                    <h4>Set the test options.</h4>
-                                    <div class="top">
-                                        <div class="col-xs-6 padded">
-                                            <label>Enter Time Limit:</label><br>
-                                            <label>Shuffle Answers</label>
-                                        </div>
-                                        <div class="col-xs-6 padded">
-                                            <input class="timelimit" placeholder="00:00"> <br>
-                                            <input type="checkbox">		
-                                        </div>
+                        <div class="row options">
+                            
+                            <div class="row padding15">
+                                <h4>Set the test options.</h4>
+                                <div class="top">
+                                    <div class="col-xs-6 padded">
+                                        <label>Enter Time Limit:</label><br>
+                                        <label>Shuffle Answers</label>
+                                    </div>
+                                    <div class="col-xs-6 padded">
+                                        <input class="timelimit" placeholder="00:00"> <br>
+                                        <input type="checkbox">		
                                     </div>
                                 </div>
-                                <div class="row padding15">
-                                    <div class="bottom padded">
-                                        <button class="btn btn-success">ADD</button>
-                                        <button class="btn btn-warning">CLEAR</button>
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="row padding15 bottom padded">
+                                <button class="btn btn-success">ADD</button>
+                                <button class="btn btn-warning">CLEAR</button>
                             </div>
                         </div>
 			        </div> <!-- END OPTIONS COLUMN -->
