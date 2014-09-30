@@ -1,0 +1,51 @@
+div.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+div.header {
+  background-color: black;
+  margin: 5px;
+}
+div.header h2 {
+  text-align: center;
+  color: white;
+  border: 1px solid red;
+}
+div.header nav {
+  display: inline-block;
+  border: 1px solid red;
+  vertical-align: top;
+  margin-top: 20px;
+}
+div.testinfobar {
+  background-color: green;
+  border: 2px solid black;
+  border-radius: 1px;
+  padding-top: 10px;
+}
+div.testinfobar label {
+  font-weight: bold;
+}
+div.testinfobar p {
+  font-weight: bold;
+  color: yellow;
+}
+div.test {
+  margin: 10px;
+  background-color: white;
+  border: 2px solid black;
+}
+div.question {
+  margin: 5px;
+  margin-top: 20px;
+  padding: 5px;
+  border: 1px solid black;
+}
+li.answer {
+  padding: 5px;
+  border: 1px solid black;
+  margin: 10px;
+}
+div.answers1 {
+  border: 1px solid black;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	
+    <link rel="stylesheet" type="text/css" href="scripts/bootstrap-3.1.1-dist/css/bootstrap.min.css">
+    <link href="scripts/bootstrap-3.1.1-dist/js/bootstrap.min.js">
+	<link rel="stylesheet" type="text/css" href="stylesheets/less/admins.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	
+	<script type="text/javascript">
+		  $(function() {
+		    $( "#sortable" ).sortable();
+		    $( "#sortable" ).disableSelection();
+		  });
+		  $(document).on('click','#add-answer-btn', function(){
+		  	$('#sortable').append("<li class='ui-state-default'><div class='boxed-answer'><label class='answer'><span class='glyphicon glyphicon-sort'></span></label><input type='text' class='answer' value='test'> <button class='btn btn-danger btn-xs added-answer'>X</button></div></li>");
+		  });
+		  $(document).on('click', '.added-answer', function(){
+		  	$(this).parent().remove();
+		  });
+		  $(document).on('dblclick', 'li.answer', function(){
+		  	$(this).parent().toggleClass('right-answer');
+		  	// $(this).parent().prop('correct', true);
+		  });
+		  $(document).on('click', '#add-question', function(){
+		  	$('.container').append("");
+		  });
+            
+        
+            $(document).on('click', 'div.answer', function(){
+                $('.answeroption').removeClass('highlight');
+//                $('.answeroption').removeAttr('selected');
+                $(this).find('label').addClass('highlight');
+//                $(this).attr('selected', 'true');
+            });
+	</script>
+	
+	<title>Admin Create/Edit Test</title>
+	
+</head>
+<body>
+
+<!-- ADMIN INDEX ( LANDING PAGE FOR ADMINS ) -->
+<div class="container">
+
+
+    <div class="row"> <!-- SECTION: NAVIGATION ROW -->
+		<div class="col-xs-12">        
+            <div class="formatted-div">
+                <div class="row">     
+                    <div class="col-xs-6"> 
+                       <div class="site-logo">
+                            <h1>Testing Platform</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <nav class="navigation">
+                            <a href="#" class="btn btn-default">Home</a>
+                            <a href="#" class="btn btn-default">Results</a>
+                            <a href="#" class="btn btn-default">Trends</a>
+                            <a href="#" class="btn btn-default">Logout</a>
+                        </nav>		
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div> <!-- END SECTION: NAVIGATION ROW -->
+
+    
+
+	<div class="row"> <!-- SECTION: SEARCH CRITERIA ROW -->
+	    <div class="col-xs-12">
+		    <div class="formatted-div">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3>Search by Student Name:</h3>
+                        <label for="">Search:</label> <input type="text">
+                    </div>
+                    <div class="col-xs-6">
+                        <h3>Search by Test ID or Name:</h3>
+                        <label for="">Search:</label> <input type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- END SECTION: SEARCH CRITERIA ROW -->
+
+	<div class="row"> <!-- SECTION: QUESTION ANSWERS & OPTIONS ROW -->
+	    <div class="col-xs-12">
+		    <div class="formatted-div">
+                <div class="row padding15">
+                    <h2>Results: </h2>
+                     <table class="table table-results">
+                        <thead>
+                            <tr>
+                                <td>Test Name</td>
+                                <td>Test ID:</td>
+                                <td>Student Name:</td>
+                                <td>Pass/Fail:</td>
+                                <td>Score:</td>
+                                <td>On-Time:</td>
+                            </tr>
+                        </thead>
+                        <tr class="success">
+                            <td>Coding Challenge 101</td>
+                            <td>1234</td>
+                            <td>James Johnson</td>
+                            <td>PASS</td>
+                            <td>78%</td>
+                            <td>YES</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>Coding Challenge 202</td>
+                            <td>1234</td>
+                            <td>James Johnson</td>
+                            <td>FAIL</td>
+                            <td>53%</td>
+                            <td>NO</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div> <!-- END SECTION: QUESTION ANSWERS & OPTIONS ROW -->
+
+</div>
+</body>
+</html>
