@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="scripts/bootstrap-3.1.1-dist/css/bootstrap.min.css">
-    <link href="scripts/bootstrap-3.1.1-dist/js/bootstrap.min.js">
-	<link rel="stylesheet" type="text/css" href="stylesheets/less/admins.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script> <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="scripts/bootstrap-3.1.1-dist/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <link href="scripts/bootstrap-3.1.1-dist/js/bootstrap.min.js"> <!-- Bootstrap JS -->
+	<link rel="stylesheet" type="text/css" href="stylesheets/less/admins.css"> <!-- Stylesheet -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="scripts/jquery.countdown.js">
 	<script type="text/javascript">
         $(document).on('click', 'div.answer', function(){
             $('.answeroption').removeClass('highlight');
@@ -14,12 +14,29 @@
             $(this).find('label').addClass('highlight');
             // $(this).attr('selected', 'true');
         });
-	</script>
+        $(document).on('click', '#nextquestion', function(){
+            countDown(10, 'timelimit');
+        });
+        function countDown(secs, elem){
+            var element = document.getElementById(elem);
+            element.innerHTML = secs;
+            if(secs < 5)
+                $('#timelimit').addClass('timelimit-ending');
+            if(secs < 1)
+            {
+                clearTimeout(timer);  
+                // ACTION TO GET NEW QUESTION HERE.                
+                element.innerHTML = "NEXT";
+            }
+            secs--;
+            var timer = setTimeout('countDown('+secs+',"'+elem+'")',1000);
+        }
+    </script>
+
 	<title>User - Test</title>
 </head>
 <body>
 
-<!-- ADMIN INDEX ( LANDING PAGE FOR ADMINS ) -->
 <div class="container">
 
 	<div class="row"> <!-- SECTION: NAVIGATION ROW -->
@@ -71,9 +88,12 @@
                <div class="col-xs-6">
                    <h3>Question 4 / 8</h3>
                </div>
-                <div class="col-xs-6">
-                   <h3>Time-Left: 00:35</h3>
+                <div class="col-xs-3">
+                   <h3>Time-Left: <span id="timelimit"></span></h3>
                </div>
+               <div class="col-xs-3">
+                   <div id="countdowntimer"><span id="future_date"></span></div>               
+                </div>
             </div>
             <div class="row"> <!-- QUESTION ROW -->
                 <div class="col-xs-12">
@@ -108,12 +128,14 @@
                         </ul>
                 </div> <!-- END ANSWERS COLUMN -->
                 <div class="col-xs-4"> <!-- OPTIONS COLUMN -->
-                    <a href="#" class="btn btn-primary padding15">Next Question (0:00 Seconds Remaining</a>
+                    <a href="#" id="nextquestion" class="btn btn-primary padding15">Next Question - 0:00 Seconds Remaining</a>
                 </div> <!-- END OPTIONS COLUMN -->
             </div> <!-- END ANSWERS AND OPTIONS ROW -->
         </div>
     </div> <!-- END SECTION: QUESTION ANSWERS & OPTIONS ROW -->
-
+    <script>
+        countDown(7, 'timelimit');
+    </script>
 </div>
 </body>
 </html>

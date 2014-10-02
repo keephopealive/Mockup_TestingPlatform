@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<!-- ADMIN INDEX ( LANDING PAGE FOR ADMINS ) -->
 <div class="container">
 
 	<div class="row"> <!-- SECTION: NAVIGATION ROW -->
@@ -22,8 +21,7 @@
                 </div>
                 <div class="col-xs-6">
                     <nav class="navigation">
-                        <a href="/Users/kratos/Desktop/TestingPlatform/user-test-new.html" class="btn btn-primary">Take a Test</a>
-                        <a href="/Users/kratos/Desktop/TestingPlatform/admin-test-new.html" class="btn btn-success">Create a Test</a>
+                       
                     </nav>		
                 </div>
             </div>
@@ -34,18 +32,45 @@
 		<div class="col-xs-12 formatted-div">
             <div class="row">
                 <div class="col-xs-12">
-                    <div>
-                        <h3>Information Page:</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi corrupti, impedit recusandae alias consequuntur aliquid tenetur qui fugit, quas non cupiditate veniam neque odit, repudiandae. Possimus, dignissimos cupiditate! Omnis, praesentium.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, necessitatibus quod itaque. Deserunt quisquam, est voluptatibus expedita fuga quia, possimus nulla commodi, laudantium fugiat officia, ducimus minus iure reiciendis repudiandae?</p>
-                    </div>    
+                    <p class="content-description">Welcome to the Testing Platform, you can easily take a test, or create a test of your own. Be sure to review the test description before starting - tests could include time limits for each question. Good luck! </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
-                    <nav class="navigation">
-                        <a href="#" class="btn btn-primary">Take a Test</a>
-                        <a href="#" class="btn btn-success">Create a Test</a>
-                    </nav>
+                <div class="col-xs-6">
+                    <h3>Take a Test:</h3>
+                    <div class="row">
+                        <div class="col-xs-6">
+                          <div class="padding5">
+                              <label for=""> Select Test: </label>
+                          </div>
+                           <div class="padding15">
+                                <label for="">First Name: </label><br>
+                            </div>
+                            <div class="padding5">
+                            <label for="">Last Name: </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 ">
+                          <div class="padding5">
+                            <select name="" id="" class="form-control">
+                                <option  value="Coding Challenge 101" selected>Coding Challenge 101</option>
+                                <option value="Coding Challenge 202">Coding Challenge 202</option>
+                            </select>    
+                          </div>
+                           <div class="padding5">
+                            <input type="text" class="wide100">
+                            </div>
+                            <div class="padding5">
+                            <input type="text" class="wide100">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/Users/kratos/Desktop/TestingPlatform/user-test-new.html" class="btn btn-primary take_create_test_btn wide80">Take a Test</a>
+                </div>
+                <div class="col-xs-6">
+                   <h3>Create a Test:</h3>
+                   <p></p>
+                    <a href="/Users/kratos/Desktop/TestingPlatform/admin-test-new.html" class="btn btn-success take_create_test_btn wide80">Create a Test</a>
                 </div>
             </div>
 		</div>

@@ -91,6 +91,9 @@ li{
       border-radius: 3px;
       margin-top: 4px;
     }
+    .highlight{
+        background-color: yellow;
+    }
     div.answers{
       padding: 5px;
     }
@@ -98,13 +101,50 @@ li{
       margin-left: 40px;
       width: 383px;
     }
+    .content-description
+    {
+        text-align: left;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: rgb(55,75,112);
+        font-size: 1.1em;
+        
+    }
+#future_date{
+    height: 50px;
+    width: 50px;
+}
     label.answer{
       padding: 3px;
     }
     .answer{
         text-align: left;
     }
+    .timelimit-ending{
+        color: rgb(255,100,100);
+        font-weight: bold;
+    }
+    .wide100{
+        width: 100%;
+    }
+    .wide80{
+        width: 80%;
+    }
+    .take_create_test_btn{
+        margin: 10px;
+    }
 
+    ol.ol-questions{
+        list-style: none;
+        padding-left:0;
+        padding-left:30px;
+        padding-right:30px;
+        padding-top: 0px;
+    }
+
+    .user-test-results-test-details{
+        font-size: 1.5em;
+    }
 
     #sortable { 
       list-style-type: none; 
