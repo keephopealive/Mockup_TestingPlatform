@@ -31,9 +31,6 @@ div.formatted-div {
 .wide50{
     width: 50%;
 }
-li{
-    list-style: ;
-}
 .highlight{
     background: rgb(100,255,100);
 }
@@ -79,9 +76,18 @@ li{
     div.answers input.answer {
       width: 335px; 
     }
+    .radio_btn{
+        height: 18px;
+        width: 18px;
+    }
+    
 
     #first-answer{
       margin-right: 25px;
+    }
+    .answer_option{
+        width: 100px;
+        height: 100px;
     }
 
     .boxed-answer{ /* REMOVE TO CHANGE ANSWER EFFECT */
@@ -119,6 +125,9 @@ li{
     }
     .answer{
         text-align: left;
+    }
+    .answeroption{
+        padding-left: 30px;
     }
     .timelimit-ending{
         color: rgb(255,100,100);

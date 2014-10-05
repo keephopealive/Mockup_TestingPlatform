@@ -41,10 +41,8 @@
         });
         
         $(document).on('click', '#addQuestion', function(){
-            var info = $(this).closest('form').serializeArray();
-            console.log(info);
-            var question = info[0].value;
-            $('#sortable2').append("<li class='ui-state-default'><div class='row'> <div class='col-xs-12 formatted-div'><div class='row'><div class='col-xs-12'><div class='question'><textarea>"+question+"</textarea></div></div></div><div class='row'><div class='col-xs-6'><div class='answers'> <h4>Doublec click on an answer to toggle correct/incorrect.</h4><ul id='sortable' class='answerbank'></ul><button class='boxed-answer add-answer'>Add an answer</button></div></div><div class='col-xs-6'><div class='row'><div class='options'><div class='row padding15'><h4>Set the test options.</h4><div class='top'><div class='col-xs-6 padded'><label>Enter Time Limit:</label><br><label>Shuffle Answers</label></div><div class='col-xs-6 padded'><input type='stopwatch' class='timelimit' placeholder='00:00'> <br><input type='checkbox'></div></div></div><div class='row padding15'><div class='bottom padded'><button class='btn btn-success'>UPDATE</button><button class='btn btn-danger delete_btn'>DELETE</button></div></div></div></div></div></div></div></div></li>");            
+            
+            $('#sortable2').append("<li class='ui-state-default'><div class='row'> <div class='col-xs-12 formatted-div'><div class='row'><div class='col-xs-12'><div class='question'><textarea></textarea></div></div></div><div class='row'><div class='col-xs-6'><div class='answers'> <h4>Doublec click on an answer to toggle correct/incorrect.</h4><ul id='sortable' class='answerbank'></ul><button class='boxed-answer add-answer'>Add an answer</button></div></div><div class='col-xs-6'><div class='row'><div class='options'><div class='row padding15'><h4>Set the test options.</h4><div class='top'><div class='col-xs-6 padded'><label>Enter Time Limit:</label><br></div><div class='col-xs-6 padded'><input type='stopwatch' class='timelimit' placeholder='00:00'> <br></div></div></div><div class='row padding15'><div class='bottom padded'><button class='btn btn-success'>UPDATE</button><button class='btn btn-danger delete_btn'>DELETE</button></div></div></div></div></div></div></div></div></li>");            
             
             return false;
         });
@@ -103,57 +101,23 @@
             </div>
 		</div>
 	</div> <!-- END SETION: TEST DETAILS ROW -->
+    
 
-	<div class="row"> <!-- SECTION: QUESTION ANSWERS & OPTIONS ROW -->
-	    <div class="col-xs-12 formatted-div">           
-              <h3>Generate Test Question:</h3>
-           <form action="" id="newQuestion" type="post"> <!-- FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM -->
-            <div class="row"> <!-- QUESTION ROW -->
-                <div class="col-xs-12">
-                    <div class="question">
-                        <textarea id="formQuestion" name="question" value=""></textarea>
-                    </div>
-                </div>
-            </div>	
-            <div class="row"> <!-- ANSWERS AND OPTIONS ROW -->
-                <div class="col-xs-6 answers"> <!-- ANSWERS COLUMN -->
-                    <h4>Doublec click on an answer to toggle correct/incorrect.</h4>
-                    <ul id="sortable" class="answerbank">
-                    </ul>
-                    <button class="boxed-answer add-answer">Add an answer</button>
-                </div> <!-- END ANSWERS COLUMN -->
-                <div class="col-xs-6"> <!-- OPTIONS COLUMN -->
-                    <div class="row options">
-                        <div class="row padding15">
-                            <h4>Set the test options.</h4>
-                            <div class="col-xs-6 padded">
-                                <label>Enter Time Limit:</label><br>
-                                <label>Shuffle Answers</label>
-                            </div>
-                            <div class="col-xs-6 padded">
-                                <input class="timelimit" placeholder="00:00" name="questionTimeLimit"> <br>
-                                <input type="checkbox">		
-                            </div>
-                        </div>
-                        <div class="row padding15 bottom padded">
-                            <button class="btn btn-success" id="addQuestion">ADD</button>
-                            <button class="btn btn-warning">CLEAR</button>
-                        </div>
-                    </div>
-                </div> <!-- END OPTIONS COLUMN -->
-            </div> <!-- END ANSWERS AND OPTIONS ROW -->
-            </form> <!-- FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM -->
-        </div>
-    </div> <!-- END SECTION: QUESTION ANSWERS & OPTIONS ROW -->
-    <div class="row"> <!-- SECTION: QUESTION ANSWERS & OPTIONS ROW -->
-	    <div class="col-xs-12 formatted-div">           
-              <h3>Questions List:</h3>
-        </div>
-    </div>
 
     <ol id="sortable2" class="ol-questions"> <!-- QUESTIONS SORT -->        
+
+	
       
     </ol> <!-- END QUESTIONS SORT -->
+
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+           <div class="formatted-div">
+                <a href="" class="btn btn-success wide100" id="addQuestion">Add New Question</a>
+           </div>
+            
+        </div>
+    </div>
 
 </div>
 </body>

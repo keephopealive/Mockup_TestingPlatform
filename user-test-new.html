@@ -8,11 +8,13 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<link rel="stylesheet" href="scripts/jquery.countdown.js">
 	<script type="text/javascript">
-        $(document).on('click', 'div.answer', function(){
-            $('.answeroption').removeClass('highlight');
+        $(document).on('click', 'li.answer', function(){
+//            $('.answer').removeClass('highlight');
             // $('.answeroption').removeAttr('selected');
-            $(this).find('label').addClass('highlight');
+//            $(this).find('.answer').addClass('highlight');
+//            $(this).find('input').addAttr('checked');
             // $(this).attr('selected', 'true');
+            // IF user-answers 
         });
         $(document).on('click', '#nextquestion', function(){
             countDown(10, 'timelimit');
@@ -105,25 +107,25 @@
             <div class="row padding15"> <!-- ANSWERS AND OPTIONS ROW -->
                 <div class="col-xs-8"> <!-- ANSWERS COLUMN -->
                        <ul class="user-answers">
-                            <li>
-                                <div class="answer form-group">
-                                    <label for="tetst" class="form-control answeroption">Test Answer Here</label>                        
-                                </div>
+                            <li class="answer">
+                                <label for="answerA">
+                                    <input type="radio" id="answerA" class="radio_btn" name="answer_option"> Test Answer Here
+                                </label>
                             </li>
-                            <li>
-                                <div class="answer form-group">
-                                    <label for="tetst" class="form-control answeroption">Test Answer Here</label>
-                                </div>
+                             <li class="answer">
+                                <label for="answerB">
+                                    <input type="radio" id="answerB" class="radio_btn" name="answer_option"> Test Answer Here
+                                </label>
                             </li>
-                            <li>
-                                <div class="answer form-group">
-                                    <label for="tetst" class="form-control answeroption">Test Answer Here</label>
-                                 </div>
+                             <li class="answer">
+                                <label for="answerC">
+                                    <input type="radio" id="answerC" class="radio_btn" name="answer_option"> Test Answer Here
+                                </label>
                             </li>
-                            <li>
-                                <div class="answer form-group">
-                                    <label for="tetst" class="form-control answeroption">Test Answer Here</label>
-                                </div>
+                             <li class="answer">
+                                <label for="answerD">
+                                    <input type="radio" id="answerD" class="radio_btn" name="answer_option"> Test Answer Here
+                                </label>
                             </li>
                         </ul>
                 </div> <!-- END ANSWERS COLUMN -->
