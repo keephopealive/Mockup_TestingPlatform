@@ -1,11 +1,17 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="scripts/bootstrap-3.1.1-dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/less/admins.css">
-	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script> <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="scripts/bootstrap-3.2.0-dist/css/bootstrap.css">
+    <link href="scripts/bootstrap-3.1.1-dist/js/bootstrap.min.js"> <!-- Bootstrap JS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/admins.css"> <!-- Stylesheet -->
 	<title>Admin - Dashboard</title>
+	<script>
+        $(document).on('click', '.destroy_test', function(){
+            $(this).closest('tr').remove();
+            return false;
+        });
+    </script>
 </head>
 <body>
 
@@ -67,11 +73,19 @@
                             </tr>
                         </thead>
                         <tr>
-                            <td>CodingChallenge1</td>
+                            <td>CodingChallenge 202</td>
                             <td>Yes</td>
                             <td>
-                                <a href="#" class="btn btn-primary">Edit</a> 
-                                <a href="#" class="btn btn-danger">Destroy</a>
+                                <a href="#" class="btn btn-warning">Edit</a>  
+                                 <a href="#" class="btn btn-danger destroy_test">Destroy</a>
+                            </td>
+                        </tr>
+                        <tr id="test2">
+                            <td>CodingChallenge 202</td>
+                            <td>Yes</td>
+                            <td>
+                                <a href="#" class="btn btn-warning">Edit</a>  
+                                 <a href="#" class="btn btn-danger destroy_test">Destroy</a>
                             </td>
                         </tr>
                     </table>
