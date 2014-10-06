@@ -17,13 +17,13 @@
             $(document).on('click', '.add-answer', function(){
                 _answerIndex = _answerIndex + 1;
                 console.log(_answerIndex);
-                $(this).closest('.answers').find('.answerbank').append("<ol id='ol-questions-id'><li class='ui-state-default test2'><div class='boxed-answer'><label class='answer'><span class='glyphicon glyphicon-sort'></span></label><input type='text' class='answer' name='answer"+_answerIndex+"' value=''> <button class='btn btn-danger btn-xs added-answer'>X</button></div></li></ol>");
+                $(this).closest('.answers').find('ol').append("<li class='ui-state-default test2'><div class='boxed-answer'><label class='answer'><input type='radio' name='correctAnswer'></span></label><input type='text' class='answer' name='answer"+_answerIndex+"' value=''> <button class='btn btn-danger btn-xs added-answer'>X</button></div></li>");
                 return false;
             });
         });
         
         $(document).on('click', '.added-answer', function(){
-            $(this).parent().remove();
+            $(this).parent().parent().remove();
         });
 
         $(document).on('dblclick', 'li.answer', function(){
@@ -39,11 +39,11 @@
         });
         
         $(document).on('click', '#addQuestion', function(){
-            $('#sortable2').append("<li class='ui-state-default'><div class='row'> <div class='col-xs-12 formatted-div'><div class='row'><div class='col-xs-12'><div class='question'><textarea></textarea></div></div></div><div class='row'><div class='col-xs-6'><div class='answers'> <h4>Doublec click on an answer to toggle correct/incorrect.</h4><ul id='sortable' class='answerbank'></ul><button class='boxed-answer add-answer'>Add an answer</button></div></div><div class='col-xs-6'><div class='row'><div class='options'><div class='row padding15'><h4>Set the test options.</h4><div class='top'><div class='col-xs-6 padded'><label>Enter Time Limit:</label><br></div><div class='col-xs-6 padded'><input type='stopwatch' class='timelimit' placeholder='00:00'> <br></div></div></div><div class='row padding15'><div class='bottom padded'><button class='btn btn-success'>UPDATE</button><button class='btn btn-danger delete_btn'>DELETE</button></div></div></div></div></div></div></div></div></li>");            
+            $('#sortable2').append("<li class='ui-state-default'><div class='row'> <div class='col-xs-12 questions-div '><div class='row'><div class='col-xs-12'><div class='question'><textarea></textarea></div></div></div><div class='row'><div class='col-xs-6'><div class='answers'> <h4>Click the circle to identify correct answer.</h4><div id='sortable' class='answerbank'><ol id='ol-questions-id'></ol></div><button class='boxed-answer add-answer'>Add an answer</button></div></div><div class='col-xs-6'><div class='row'><div class='options'><div class='row padding15'><h4>Set the test options.</h4><div class='top'><div class='col-xs-6 padded'><label>Enter Time Limit:</label><br></div><div class='col-xs-6 padded'><input type='stopwatch' class='timelimit' placeholder='00:00'> <br></div></div></div><div class='row padding15'><div class='bottom padded'><button class='btn btn-danger delete_btn'>DELETE QUESTION</button></div></div></div></div></div></div></div></div></li>");            
             return false;
         });
 	</script>
-	<title>AdminAAAAA Create/Edit Test</title>
+	<title>Admin Create/Edit Test</title>
 </head>
 <body>
 
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-xs-2 padding5">
-                    <button class="btn btn-success">Update</button>
+                    <button class="btn btn-primary">SAVE</button>
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </div>
@@ -109,7 +109,8 @@
     <div class="row">
         <div class="col-xs-offset-2 col-xs-8">
            <div class="formatted-div">
-                <a href="" class="btn btn-success wide100" id="addQuestion">Add New Question</a>
+                <a href="" class="btn btn-success wide40" id="addQuestion">Add New Question</a>
+                <a href="" class="btn btn-primary wide40 ">SAVE</a>
            </div>
             
         </div>

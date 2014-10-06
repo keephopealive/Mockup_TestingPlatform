@@ -11,7 +11,7 @@
         // function countDown2(secs){
         //     for(var i = secs; i > 0; i--)
         //     {
-                
+
         //     }
         // }
 
@@ -27,12 +27,16 @@
             }
             if(secs < 1)
             {
-                clearTimeout(timer);  
+
                 // ACTION TO GET NEW QUESTION HERE.                
                 element.innerHTML = "NEXT";
                 element2.innerHTML = "NEXT";
+                return false;
 
             }
+            $(document).on('click', '#nextquestion', function(){
+                clearTimeout();
+            });
             secs--;
             var timer = setTimeout('countDown('+secs+',"'+elem+'","'+elem2+'")',1000);
         }

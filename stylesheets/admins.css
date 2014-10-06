@@ -15,6 +15,24 @@ div.formatted-div {
       text-align: center;
       border: 2px solid rgb(55,55,55);
 }
+div.questions-div {
+      margin: 5px auto;
+      padding: 10px;
+      background-color: rgb(39,158,156);
+      color: rgb(247,247,247);
+      border-radius: 4px;
+      text-align: center;
+      border: 2px solid rgb(55,55,55);
+}
+input{
+  color: black;
+}
+.wide50{
+  width: 50%;
+}
+.wide40{
+  width: 40%;
+}
 .vertical-align-center{
     vertical-align: center;
     margin-top: 15px;
@@ -33,6 +51,9 @@ div.formatted-div {
 }
 .highlight{
     background: rgb(100,255,100);
+}
+.questions-div{
+  background-color: rgb(1,1,1);
 }
 
 /* HEADER RELATED */
@@ -74,7 +95,7 @@ div.formatted-div {
       font-weight: bold;
     }
     div.answers input.answer {
-      width: 335px; 
+      width: 305px; 
     }
     .radio_btn{
         height: 18px;
